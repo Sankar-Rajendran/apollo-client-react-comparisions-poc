@@ -4,6 +4,8 @@ import { createServer } from 'http';
 import { execute, subscribe } from 'graphql';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
+const cors = require('cors');
+
 
 import schema from './schema';
 
@@ -12,6 +14,7 @@ const PORT = 4000;
 
 const app = express();
 
+app.use(cors());
 app.use('/graphiql', graphiqlExpress({
     endpointURL: '/graphql',
     subscriptionsEndpoint: `ws://localhost:4000/subscriptions`
@@ -26,7 +29,7 @@ server.listen(PORT, () => {
     new SubscriptionServer({
         execute,
         subscribe,
-        schema: schema,        
+        schema: schema,
     }, {
             server: server,
             path: '/subscriptions'

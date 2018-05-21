@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+
+import { ApolloProvider } from "react-apollo";
+
+
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -23,11 +28,20 @@ client
                 todoItem , 
                 completed
             }
+
+            allTodos{
+                id , 
+                todoItem , 
+                completed
+            }
         }
     `
     })
     .then(result => console.log(result));
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    (<ApolloProvider client={client}>
+        <App />
+    </ApolloProvider>), document.getElementById('root'));
 registerServiceWorker();

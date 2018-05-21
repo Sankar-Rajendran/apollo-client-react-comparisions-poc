@@ -1,0 +1,13 @@
+
+.home .title{
+    text-align: center;
+    color: brown;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.home .spacer{
+    height:20px;
+    width:100%;
+}

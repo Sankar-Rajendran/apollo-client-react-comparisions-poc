@@ -1,0 +1,23 @@
+.addTodo{ 
+    margin:auto;
+    width: 400px;
+}
+
+
+
+.addTodo .label{
+    padding-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 10px;
+    color: brown;
+}
+
+
+
+.addTodo .add-button{
+margin-left: 20px;
+background-color: brown;
+color: white;
+font-weight: bold;
+}

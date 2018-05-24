@@ -9,14 +9,14 @@ class Home extends Component {
 
     state = {
         todos: [
-            { id: 1, todoTitle: "Todo 1", completed: true },
-            { id: 2, todoTitle: "Todo 2", completed: false }
+            { id: '_kt20zuu0t', todoItem: "Todo 1", completed: true },
+            { id: '_tt20zuu0t', todoItem: "Todo 2", completed: false }
         ]
     }
 
     addNewTodo = (newTodo) => {
         var todosCopy = this.state.todos;
-        newTodo.id = todosCopy.length + 1;
+        newTodo.id = '_' + Math.random().toString(36).substr(2, 9);
         todosCopy.push(newTodo);
         this.setState({ todos: todosCopy });
     }

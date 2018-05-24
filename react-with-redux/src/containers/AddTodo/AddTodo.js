@@ -30,10 +30,10 @@ class AddTodo extends Component {
 
     addTodo = (newTodo) => {
         var todoList = [...this.state.todoList];
-        newTodo.id = todoList.length + 1;
+        newTodo.id = '_' + Math.random().toString(36).substr(2, 9);
         todoList.push({
             id: newTodo.id,
-            todoTitle: this.state.todoTitle,
+            todoItem: this.state.todoTitle,
             completed: false
         });
         this.props.addTodo(todoList);

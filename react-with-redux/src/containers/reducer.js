@@ -1,7 +1,7 @@
 
 let todosList = [
-    { id: 1, todoTitle: "Todo 1", completed: true },
-    { id: 2, todoTitle: "Todo 2", completed: false }
+    { id: '_kt20zuu0t', todoItem: "Todo 1", completed: true },
+    { id: '_tt20zuu0t', todoItem: "Todo 2", completed: false }
 ]
 
 let initialState = {

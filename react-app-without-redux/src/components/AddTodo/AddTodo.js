@@ -7,18 +7,18 @@ class addTodo extends Component {
         super(props);
 
         this.state = {
-            todoTitle: "",
+            todoItem: "",
             completed: false
         }
     }
 
     update = (e) => {
-        this.setState({ todoTitle: e.target.value });
+        this.setState({ todoItem: e.target.value });
     };
 
     addClicked = () => {
         this.props.addClicked(this.state);
-        this.setState({ todoTitle: ''});
+        this.setState({ todoItem: ''});
     }
 
     render() {
@@ -26,7 +26,7 @@ class addTodo extends Component {
             <div className="addTodo">
                 <div className="row">
                     <p className="label">Add New Todo</p>
-                    <input value={this.state.todoTitle} className="input-text" type="text" onChange={this.update} />
+                    <input value={this.state.todoItem} className="input-text" type="text" onChange={this.update} />
                     <button className="add-button" onClick={this.addClicked}>Add</button>
                 </div>
             </div>

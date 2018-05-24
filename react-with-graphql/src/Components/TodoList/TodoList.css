@@ -31,3 +31,11 @@
 .delete-icon{
     padding-left:450px;
 }
+
+
+button{
+    margin-left: 20px;
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+}

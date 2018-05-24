@@ -30,6 +30,7 @@ const AddTodo = () => {
                         <p className="label">Add New Todo</p>
                         <input ref={node => { input = node; }} />
                         <button className="add-button" onClick={() => { addTodo({ variables: { todoItem: input.value } }); }}>Add</button>
+
                     </div>
                 </div>
             )}

@@ -4,18 +4,18 @@ import { PubSub } from 'graphql-subscriptions';
 export const pubsub = new PubSub();
 
 let todosList = [
-    { id: 1, todoItem: "Todo 1", completed: true },
-    { id: 2, todoItem: "Todo 2", completed: false }
+    { id: '_kt20zuu0t', todoItem: "Todo 1", completed: true },
+    { id: '_tt20zuu0t', todoItem: "Todo 2", completed: false }
 ]
 
-const TOD_ADDED = 'TOD_ADDED';
+const TODO_ADDED = 'TODO_ADDED';
 const TODO_REMOVED = 'TODO_REMOVED';
 const TODO_UPDATED = 'TODO_UPDATED';
 
-const resolvers = {    
+const resolvers = {
     Subscription: {
         notifyUsers: {
-            subscribe: () => pubsub.asyncIterator([TOD_ADDED, TODO_REMOVED, TODO_UPDATED]),            
+            subscribe: () => pubsub.asyncIterator([TODO_ADDED]),
         }
     },
     Query: {
@@ -31,21 +31,23 @@ const resolvers = {
     Mutation: {
         addTodo: (root, { todoItem }) => {
             var newTodo = {
-                id:todosList.length + 1,
-                completed:false,
+                id: '_' + Math.random().toString(36).substr(2, 9),
+                completed: false,
                 todoItem
             }
-            todosList.push(newTodo);        
+            todosList.push(newTodo);
+            let Message = { message: 'New todo has been added', todo: newTodo };
+            pubsub.publish(TODO_ADDED, { notifyUsers: Message });
             return todosList;
         },
         updateTodo: (root, { todoId }) => {
             var index = todosList.findIndex(x => x.id === todoId);
             var element = todosList[index];
-            todosList[index].completed = true;           
+            todosList[index].completed = true;
             return todosList;
         },
         removeTodo: (root, { todoId }) => {
-            todosList.splice(todosList.findIndex(x => x.id === todoId), 1);            
+            todosList.splice(todosList.findIndex(x => x.id === todoId), 1);
             return todosList;
         }
     }

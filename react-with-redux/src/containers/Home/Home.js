@@ -19,7 +19,7 @@ class Home extends Component {
         this.setState({ todoList: this.props.todoList });
     }
 
-   
+
 
     render() {
         let todoList = this.state.todoList || this.props.todoList;

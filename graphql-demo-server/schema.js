@@ -5,7 +5,7 @@ import resolvers from "./resolvers";
 
 const typeDefs = [`
 type Todo {
-    id:Int
+    id:String!
     todoItem:String
     completed:Boolean
 }
@@ -26,8 +26,8 @@ type Query {
 
 type Mutation {
     addTodo(todoItem : String!)  : [Todo]
-    updateTodo(todoId : Int!)  : [Todo]
-    removeTodo(todoId : Int!) : [Todo]
+    updateTodo(todoId : String!)  : [Todo]
+    removeTodo(todoId : String!) : [Todo]
 }
 
 schema {

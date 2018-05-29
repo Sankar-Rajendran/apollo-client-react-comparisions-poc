@@ -1,0 +1,41 @@
+.todo-completed{
+    margin:auto;
+    width: 500px;
+    text-align: left;
+    color: green;
+    text-decoration: line-through;
+}
+
+.todo-item{
+    padding:1px !important;
+    margin-bottom:10px !important;
+}
+
+
+.todo-pending {
+    margin:auto;
+    width: 500px;
+    text-align: left;
+    color: red;
+}
+
+
+.todo-item-label{
+    padding-left: 5px;    
+}
+
+.complete-checkbox{
+    vertical-align:middle; 
+}
+
+.delete-icon{
+    padding-left:450px;
+}
+
+
+button{
+    margin-left: 20px;
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+}

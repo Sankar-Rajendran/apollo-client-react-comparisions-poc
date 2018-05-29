@@ -1,0 +1,38 @@
+.addTodo{ 
+    margin:auto;
+    width: 400px;
+}
+
+
+
+.addTodo .label{
+    padding-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 10px;
+    color: brown;
+}
+
+
+
+.addTodo .add-button{
+margin-left: 20px;
+background-color: brown;
+color: white;
+font-weight: bold;
+}
+
+
+.visibility-check{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.checkbox-label{
+    margin-left:10px;
+    padding-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 10px;
+    color: brown;
+}
